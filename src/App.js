@@ -30,8 +30,18 @@ class App extends Component {
   render()
   {return (
       <div className="App">
+        <input className= 'search-box' type= 'search' placeholder= 'search monsters' onChange={(event) => {
+         let toBecheckString = event.target.value.toLocaleLowerCase();
+          const filterdeMonsters = this.state.monsters.filter((monster) => {
+            // eslint-disable-next-line no-undef
+            return monster.name.toLocaleLowerCase().includes(toBecheckString);
+          })
+          this.setState(() => {
+            return {monsters : filterdeMonsters};
+          })
+        }}/>
         {
-          this.state.monsters.map((monster) => {
+        this.state.monsters.map((monster) => {
             return (
                 <div key={monster.id}>
                 <h1>{monster.name}</h1>
