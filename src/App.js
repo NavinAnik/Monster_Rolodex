@@ -5,6 +5,7 @@ import SearchBox from "./components/search-box/search-box.component";
 import './App.css';
 import './search-box.styles.css'
 
+
 class App extends Component {
   constructor(){
     super();
@@ -46,6 +47,8 @@ class App extends Component {
     })
   return (
       <div className="App">
+          <h1 className= 'app-title'>Monsters</h1>
+
         <SearchBox onChangeHandeler = {OnSearchChange} placeHolder = 'Search Monsters' className = 'search-monsters'/>
 
         <CardList  monsters ={filterdeMonsters}/>
